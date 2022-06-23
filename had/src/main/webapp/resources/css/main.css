@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: notosans;
+    src: url(../font/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: notosans_light;
+    src: url(../font/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: cafe24;
+    src: url(../font/Cafe24SsurroundAir.ttf) format('truetype');
+}
+@font-face {
+    font-family: blackjack;
+    src: url(../font/BLACKJAR.TTF) format('truetype');
+}
+
+input:focus {outline:none;}
+
+p {
+	cursor: default;
+}
+
+#wrap {
+    width: 1920px;
+    margin: auto; 
+    background-image: url(../img/main_img.jpg);
+    background-size: 1920px 400px;
+}
+
+#content {
+    width: 1320px;
+    height: 400px;
+    margin: auto;
+    
+}
+
+#header div{
+    display: inline-block;
+}
+
+#nav ul li {
+    display: inline-block;
+    font-family: cafe24;
+    font-size: 13pt;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul li:first-child {
+    margin-left: 870px;
+    margin-right: 60px;
+}
+
+#logo p {
+    font-family: blackjack;
+    font-weight: bold;
+    font-size: 33pt;
+    margin-top: 30px;
+}
+
+#sub_logo{
+    margin-top: 50px;
+    font-family: notosans;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+#sub_logo p {
+    text-align: center;
+}
+
+#search {
+    width: 800px;
+    height: 50px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 100px;
+    margin-top: 70px;
+    background-color: #fff;
+}
+
+#search form {
+    display: flex;
+}
+
+#search form input {
+    border: none;
+    background: rgba(0,0,0,0.0);
+    width: 700px;
+    height: 47px;
+    padding-left: 30px;
+    font-family: notosans;
+    font-size: 12pt;
+}
+
+#search form input::placeholder {
+    color: black;
+    opacity: 0.5;
+}
+
+#search form div button{
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    position: relative;
+    bottom: 7px;
+}
+
+#search form div button img{
+    width: 30px;
+    height: 30px;
+}
+
+#menu {
+    width: 1920px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: -60px;
+}
+
+#menu div {
+    width: 1011px;
+    margin: auto;
+}
+
+#menu div ul {
+    display: flex;
+}
+
+#menu div ul li {
+    flex: 1;
+    text-align: center;
+    font-family: notosans;
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#menu div ul li:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+#menu div ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#today {
+    width: 1280px;
+    height: 367px;
+    margin: auto;
+    position: relative;
+    top: -20px;
+}
+
+#today ul {
+    display: inline;
+}
+
+#today ul li {
+    float: left;
+    width: 260px;
+    height: 365px;
+}
+
+#today ul li h1{
+    font-family: notosans;
+    font-size: 15pt;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#today ul li a {
+    border: 1px solid #888;
+}
+
+#today ul li:not(:last-child){
+    margin-right: 77px;
+}
+
+#today ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+#today ul li a img {
+   border: 1px solid #888;
+   width: 238px;
+   height: 245px;
+   margin: 10px;
+}
+
+#today ul li a div {
+    width: 260px;
+    height: 100px;
+}
+
+#today ul li a div p {
+	font-family: notosans_light;
+    font-size: 12pt;
+    text-align: center;
+    line-height: 85px;
+}
+
+#random {
+	margin: auto;
+	text-align: center;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+#random div {
+	margin: auto;
+	display: flex;
+}
+
+#random div p {
+	font-family: notosans;
+	font-size: 18pt;
+	margin-right: 5px;
+}
+
+#random div img {
+	width: 30px;
+	height: 30px;
+}
+
+#name {
+	cursor: pointer;
+}

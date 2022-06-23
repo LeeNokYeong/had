@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<sql id="member_update">
+		<choose>
+			<when test="passwd != null">
+				UPDATE member
+				SET passwd=PASSWORD(#{passwd})
+				WHERE user_num=#{userNum}
+			</when>
+			<when test="passwd == null">
+				UPDATE member
+				SET alias=#{alias}, email=#{email}
+				WHERE user_num=#{userNum}
+			</when>
+		</choose>
+	</sql>
+	<insert id="add">
+		INSERT INTO member
+		VALUES (NULL, #{userId}, PASSWORD(#{passwd}), #{alias}, #{email})
+	</insert>
+	<select id="check" resultType="Integer">
+		SELECT COUNT(*) FROM member
+		WHERE user_id=#{userId}
+	</select>
+	<select id="check_alias" resultType="Integer">
+		SELECT COUNT(*) FROM member
+		WHERE alias=#{alias}
+	</select>
+	<select id="login"  resultType="Member">
+		SELECT * FROM member
+		WHERE user_id=#{userId} AND passwd=PASSWORD(#{passwd})
+	</select>
+	<update id="update">
+		<include refid="member_update"></include>
+	</update>
+	<delete id="delete">
+		DELETE FROM member
+		WHERE user_num=#{userNum} AND passwd=PASSWORD(#{passwd})
+	</delete>
+	<select id="passwdCheck" resultType="Integer">
+		SELECT COUNT(*) FROM member
+		WHERE user_num=#{userNum} AND passwd=PASSWORD(#{passwd})
+	</select>
+	<select id="id_find" resultType="Member">
+		SELECT * FROM member
+		WHERE email=#{email}
+	</select>
+	<select id="passwd_find" resultType="Integer">
+		SELECT COUNT(*) FROM member
+		WHERE user_id=#{userId} AND email=#{email}
+	</select>
+	<update id="passwd_find_update">
+		UPDATE member
+		SET passwd=PASSWORD(#{passwd})
+		WHERE user_id=#{userId}
+	</update>
+	<select id="check_email" resultType="Integer">
+		SELECT COUNT(*) FROM member
+		WHERE email=#{email}
+	</select>
+</mapper>

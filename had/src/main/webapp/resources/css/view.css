@@ -1,0 +1,274 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: notosans;
+    src: url(../font/noto_sans_kr/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: notosans_light;
+    src: url(../font/noto_sans_kr/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: cafe24;
+    src: url(../font/Cafe24SsurroundAir.ttf) format('truetype');
+}
+@font-face {
+    font-family: blackjack;
+    src: url(../font/BLACKJAR.TTF) format('truetype');
+}
+
+input:focus {outline:none;}
+
+select:focus {outline: none;}
+
+textarea:focus {outline: none;}
+
+p {
+	cursor: default;
+}
+
+#wrap {
+    width: 1920px;
+    margin: auto;
+}
+
+#content {
+    width: 1320px;
+    margin: auto;
+}
+
+#header {
+    padding-top: 20px;
+}
+
+#header div {
+    display: inline-block;
+}
+
+#logo a {
+    font-family: blackjack;
+    font-weight: bold;
+    font-size: 33pt;
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul {
+    padding-left: 0px;
+}
+
+#nav ul li {
+    display: inline-block;
+    font-family: cafe24;
+    font-size: 13pt;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul li:first-child {
+    margin-left: 870px;
+    margin-right: 60px;
+}
+
+#sub_logo{
+    margin-top: 50px;
+    font-family: notosans;
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#add_form {
+    width: 1320px;
+    margin: auto;
+}
+
+#add {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#add_file {
+    width: 250px;
+    height: 250px;
+}
+
+#add_name {
+	margin-right: 200px;
+}
+
+#add_name div:nth-child(1) {
+    margin-left: 37px;
+}
+
+#add_name div:nth-child(2) textarea {
+    padding-top: 12px;
+    width: 500px;
+    border: none;
+    font-size: 13pt;
+    font-family: notosans_light;
+    resize: none;
+}
+
+#add_name div:nth-child(2) label {
+    vertical-align: top;
+}
+
+#add_name label {
+    font-size: 14pt;
+    font-family: notosans;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+#add_name input {
+    font-size: 13pt;
+    font-family: notosans;
+    border: none;
+    margin-bottom: 15px;
+    width: 500px;
+}
+
+#add_info {
+    margin-top: 10px;
+}
+
+#add_info div {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+    width: 170px;
+}
+
+#add_info div p {
+    font-family: notosans;
+    font-weight: bold;
+    font-size: 14pt;
+    margin-right: 10px;
+}
+
+#add_info div select {
+    font-family: notosans_light;
+    font-size: 13pt;
+    width: 110px;
+    height: 27px;
+}
+
+.title {
+    font-family: notosans;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.subject {
+    font-size: 13pt;
+    font-family: notosans_light;
+    resize: none;
+    width: 1280px;
+    height: 100px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.recipe {
+    width: 1280px;
+    margin: auto;
+}
+
+#footer {
+    width: 1280px;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+}
+
+#footer div {
+    display: flex;
+}
+
+#back {
+    width: 58px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background-color: #ffdce0;
+    font-family: notosans;
+    font-size: 14pt;
+}
+
+#recipe_update {
+    width: 120px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background-color: #ffdce0;
+    font-family: notosans;
+    font-size: 14pt;
+    position: absolute;
+    left: 905px;
+}
+
+#recipe_delete{
+    width: 57px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background-color: #ffdce0;
+    font-family: notosans;
+    font-size: 14pt;
+    position: absolute;
+    left: 1547px;
+}

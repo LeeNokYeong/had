@@ -1,0 +1,359 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: notosans;
+    src: url(../font/noto_sans_kr/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: notosans_light;
+    src: url(../font/noto_sans_kr/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: cafe24;
+    src: url(../font/Cafe24SsurroundAir.ttf) format('truetype');
+}
+@font-face {
+    font-family: blackjack;
+    src: url(../font/BLACKJAR.TTF) format('truetype');
+}
+
+input:focus {outline:none;}
+
+#wrap {
+    width: 1920px;
+    margin: auto;
+}
+
+#content {
+    width: 1320px;
+    margin: auto;
+}
+
+#header {
+    padding-top: 20px;
+}
+
+#header div {
+    display: inline-block;
+}
+
+#logo a {
+    font-family: blackjack;
+    font-weight: bold;
+    font-size: 33pt;
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul {
+    padding-left: 0px;
+}
+
+#nav ul li {
+    display: inline-block;
+    font-family: cafe24;
+    font-size: 13pt;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul li:first-child {
+    margin-left: 870px;
+    margin-right: 60px;
+}
+
+#sub_logo{
+    margin-top: 50px;
+    font-family: notosans;
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#search {
+    width: 1320px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 35px;
+}
+
+#search form {
+    display: flex;
+}
+
+#search form div {
+    display: flex;
+}
+
+#search form div select {
+    margin-right: 10px;
+    font-family: notosans_light;
+    font-size: 12pt;
+}
+
+#search form div p {
+    height: 25px;
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+
+#search form div:not(:last-child){
+    height: 25px;
+}
+
+#search form div:last-child {
+    border-bottom: 1px solid black;
+    
+}
+
+#search form div input {
+    width: 170px;
+    height: 25px;
+    border: none;
+    font-family: notosans;
+    font-size: 11pt;
+}
+
+#search form div {
+    display: flex;
+}
+
+#search form div button {
+	padding: 0px;
+    border: none;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    bottom: 2px;
+}
+
+#search form div img {
+    width: 25px;
+    height: 25px;
+}
+
+#menu_nav div {
+    width: 400px;
+    margin: auto;
+    margin-top: 110px;
+}
+
+#menu_nav div ul {
+    display: flex;
+}
+
+#menu_nav div ul li {
+    flex: 1;
+    font-family: notosans;
+    font-size: 14pt;
+    text-align: center;
+}
+
+#menu_nav div ul li:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+#menu_nav div ul li:last-child {
+    position: relative;
+    right: 10px;
+}
+
+#menu_nav div ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.button {
+    border: none;
+	color: rgba(0, 0, 0, 1.0);
+    background-color: white;
+}
+
+.button:hover {
+	color: rgba(0, 0, 0, 0.85);
+	box-shadow: rgba(255, 220, 224, 1.0) 0 0px 0px 40px inset;
+}
+
+#list {
+    width: 1920px;
+    background-color: #eee;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+#list_btn {
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#list_btn button:first-child {
+    margin-left: 30px;
+}
+
+#list div button {
+    border: none;
+    color: black;
+    font-family: notosans_light;
+    font-size: 12pt;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.container {
+    display: grid;
+    width: 1320px;
+    padding: 0px !important;
+    align-items: center;
+}
+
+.container ul {
+    padding: 0px !important;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 45px;
+}
+
+.item {
+    width: 260px;
+    height: 365px;
+    border: 1px solid #888;
+    background-color: #fff;
+}
+
+.item a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.item a img {
+    border: 1px solid #888;
+    width: 238px;
+    height: 245px;
+    margin: 10px;
+}
+
+.item a div {
+    height: 100px;
+}
+
+.item a div p {
+    font-family: notosans_light;
+    font-size: 12pt;
+    color: black;
+    text-align: center;
+    line-height: 85px;
+    margin-bottom: 0px !important;
+}
+
+#page {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+#page div {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0px 5px;
+    
+}
+
+#page div a {
+    font-family: notosans_light;
+    font-size: 12pt;
+    display: block;
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+}
+
+#crud {
+    display: flex;
+    justify-content: flex-end;
+    width: 1320px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#add {
+    margin-right: 40px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background-color: #ffdce0;
+}
+
+#add a {
+    text-decoration: none;
+    color: black;
+    font-family: notosans;
+    font-size: 14pt;
+}
+
+.active  {
+	border-bottom: solid 1px black;
+    border-radius: 0px !important;
+}
+
+.active a {
+	opacity: 1.0 !important;
+}

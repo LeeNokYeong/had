@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="recipe">
+	<sql id="recipe">
+		<where>
+			<if test="recipe != 0">
+				kind_num = #{recipe}
+			</if>
+		</where>
+	</sql>
+	<sql id="search">
+		<where>
+			<if test="recipe != 0 and flavor != 0 and keyword != ''">
+				kind_num = #{recipe}
+				AND flavor_id = #{flavor}
+				AND (recipe_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				OR recipe_items LIKE CONCAT(CONCAT('%',#{keyword}),'%'))
+			</if>
+			<if test="recipe != 0 and flavor != 0 and keyword == ''">
+				kind_num = #{recipe}
+				AND flavor_id = #{flavor}
+			</if>
+			<if test="recipe != 0 and flavor == 0 and keyword != ''">
+				kind_num = #{recipe}
+				AND (recipe_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				OR recipe_items LIKE CONCAT(CONCAT('%',#{keyword}),'%'))
+			</if>
+			<if test="recipe != 0 and flavor == 0 and keyword == ''">
+				kind_num = #{recipe}
+			</if>
+			<if test="recipe == 0 and flavor != 0 and keyword != ''">
+				flavor_id = #{flavor}
+				AND (recipe_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				OR recipe_items LIKE CONCAT(CONCAT('%',#{keyword}),'%'))
+			</if>
+			<if test="recipe == 0 and flavor != 0 and keyword == ''">
+				flavor_id = #{flavor}
+			</if>
+			<if test="recipe == 0 and flavor == 0 and keyword !=''">
+			 	recipe_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				OR recipe_items LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</where>
+	</sql>
+	<select id="list" resultType="Recipe">
+		SELECT * FROM recipe
+		<include refid="recipe"></include>
+		LIMIT #{offset}, #{perPage}
+	</select>
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM recipe
+		<include refid="recipe"></include>
+	</select>
+	
+	<select id="search" resultType="Recipe">
+		SELECT * FROM recipe
+		<include refid="search"></include>
+		LIMIT #{offset}, #{perPage}
+	</select>
+	<select id="search_total" resultType="Integer">
+		SELECT COUNT(*) FROM recipe
+		<include refid="search"></include>
+	</select>
+	
+	<insert id="add">
+		INSERT INTO recipe
+		VALUES (NULL, #{kindNum}, #{userNum}, #{flavorId}, #{recipeName}, #{subName}, #{recipeItems}, #{recipeContents}, #{filecode})
+	</insert>
+	
+	<select id="item" resultType="Recipe">
+		SELECT * FROM recipe
+		WHERE recipe_id=#{code}
+	</select>
+	
+	<update id="update">
+		UPDATE recipe
+		SET kind_num=#{kindNum}, flavor_id=#{flavorId}, recipe_name=#{recipeName}, sub_name=#{subName}, recipe_items=#{recipeItems}, recipe_contents=#{recipeContents}, filecode=#{filecode}
+		WHERE recipe_id=#{recipeId} 
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM recipe
+		WHERE recipe_id=#{code}
+	</delete>
+	<delete id="member_delete">
+		DELETE FROM recipe
+		WHERE user_num=#{userNum}
+	</delete>
+	
+	<select id="myRecipe" resultType="Recipe">
+		SELECT * FROM recipe
+		WHERE user_num=#{userNum}
+	</select>
+	
+	<select id="random" resultType="Recipe">
+		SELECT * FROM recipe ORDER BY RAND() LIMIT 4
+	</select>
+</mapper>
